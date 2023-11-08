@@ -124,10 +124,7 @@ ggplot() +
     panel.background=element_rect(fill = "gray85"),
     panel.grid.major=element_line(color="gray85"),
     legend.text=element_text(face="bold", size=8),
-    legend.title=element_text(face="bold", size=8),
-    plot.title=element_text(color=rgb(48/255,22/255,146/255), size=10, face="bold"),
-    plot.subtitle=element_text(color="gray50", size=8),
-    plot.caption = element_text(hjust = 0, color="gray50", size=6))
+    legend.title=element_text(face="bold", size=8))
 
 ####################################################################################################################
 #GET STATES WITH MOST SIGHTINGS
@@ -176,7 +173,7 @@ state_map <- function (stateABBR) {
   af2$X3 <- af$site_name
   af2 <- af2 %>% st_as_sf(coords=c("X1","X2"), crs=4326)
   
-  #MAKE MAP
+  #MAKE STATE MAP
   ggplot() +
     geom_sf(data=map_sp, fill=NA, color="black", size=0.1) +
     geom_sf(data=m2u, shape=16, size=m2u$sightings, aes(colour=shape_grouped)) +
@@ -192,10 +189,7 @@ state_map <- function (stateABBR) {
       panel.background=element_rect(fill = "gray85"),
       panel.grid.major=element_line(color="gray85"),
       legend.text=element_text(face="bold", size=8),
-      legend.title=element_text(face="bold", size=8),
-      plot.title=element_text(color=rgb(48/255,22/255,146/255), size=10, face="bold"),
-      plot.subtitle=element_text(color="gray50", size=8),
-      plot.caption = element_text(hjust = 0, color="gray50", size=6))
+      legend.title=element_text(face="bold", size=8))
 }
 
 #CA - 7988
